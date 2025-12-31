@@ -104,19 +104,11 @@ button{
   cursor:pointer;
 }
 button:active{ transform: translateY(1px); }
-
-#stage{
-  width:1024px;                 /* 기준 디자인 폭 */
-  margin:0 auto;
-  transform-origin: top center; /* 위 기준으로 축소 */
-}
-
 </style>
 </head>
 
 <body>
-<div id="stage">
-  <div class="wrap">
+<div class="wrap">
 
   <div class="title">ZOMBIE CITY1</div>
 
@@ -330,26 +322,6 @@ answerInput.addEventListener("keydown",(e)=>{
 
 /* ---------- 시작 ---------- */
 startCity();
-
-/* ---------- 모바일 축소 ---------- */
-function fitToScreen(){
-  const baseWidth = 1024;
-  const vw = window.innerWidth;
-
-  if(vw < baseWidth){
-    const scale = vw / baseWidth;
-    document.getElementById("stage").style.transform =
-      `scale(${scale})`;
-  }else{
-    document.getElementById("stage").style.transform =
-      `scale(1)`;
-  }
-}
-
-window.addEventListener("resize", fitToScreen);
-window.addEventListener("load", fitToScreen);
-
 </script>
-</div>
 </body>
 </html>
